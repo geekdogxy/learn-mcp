@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# 开发 MCP 服务器
 
 Documents are **groups of pages** connected through:
 
