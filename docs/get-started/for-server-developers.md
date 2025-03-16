@@ -1,8 +1,7 @@
 ---
 sidebar_position: 2
+title: 开发 MCP 服务器
 ---
-
-# 开发 MCP 服务器
 
 Documents are **groups of pages** connected through:
 

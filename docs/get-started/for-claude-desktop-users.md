@@ -1,8 +1,7 @@
 ---
 sidebar_position: 4
+title: 使用 Claude 客户端
 ---
-
-# 使用 Claude 客户端
 
 Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
 
