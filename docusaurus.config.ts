@@ -79,7 +79,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'get-started/introduction',
+          docId: 'get-started/index',
           position: 'left',
           label: '文档',
         },
@@ -106,8 +106,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Built with Geekdogxy`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.jettwaveLight,
+      darkTheme: prismThemes.jettwaveDark,
     },
   } satisfies Preset.ThemeConfig,
 };

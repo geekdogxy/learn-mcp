@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "xy-weather-mcp": {
+      "command": "python",
+      "args": [
+        "/Users/xy/Desktop/mcp/website/learn-mcp/codes/python/weather/weather.py"
+      ]
+    }
+  }
+}
