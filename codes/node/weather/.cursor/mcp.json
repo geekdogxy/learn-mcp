@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "xy-weather-mcp": {
+      "command": "node",
+      "args": [
+        "/Users/xy/Desktop/mcp/website/learn-mcp/codes/node/weather/weather.js"
+      ]
+    }
+  }
+}
