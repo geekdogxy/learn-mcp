@@ -33,7 +33,7 @@ MCP 服务器可以提供三种主要类型的功能：
 <Tabs>
   <TabItem value="Python" label="Python">
 
-让我们开始构建我们的天气服务器！[点击这里查看完整代码](https://github.com/geekdogxy/learn-mcp/tree/main/codes/python/weather)
+[点击这里查看完整代码](https://github.com/geekdogxy/learn-mcp/tree/main/codes/python/weather-server)
 
 ### 前置知识
 
@@ -52,6 +52,9 @@ MCP 服务器可以提供三种主要类型的功能：
 首先，让我们安装官方 SDK
 
 ```bash
+python --version
+pip --version
+
 pip install mcp
 ```
 
@@ -121,7 +124,7 @@ if __name__ == "__main__":
 
   <TabItem value="Node" label="Node">
 
-让我们开始构建我们的天气服务器！[点击这里查看完整代码](https://github.com/geekdogxy/learn-mcp/tree/main/codes/node/weather)
+[点击这里查看完整代码](https://github.com/geekdogxy/learn-mcp/tree/main/codes/node/weather-server)
 
 ### 前置知识
 

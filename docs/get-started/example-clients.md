@@ -3,6 +3,314 @@ sidebar_position: 6
 title: MCP 客户端示例
 ---
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+本页面概述了支持 Model Context Protocol (MCP) 的应用程序。每个客户端可能支持不同的 MCP 功能，允许与 MCP 服务器进行不同程度的集成。
 
-Docusaurus has **much more to offer**!
+## 功能支持矩阵
+
+| 客户端                               | [Resources] | [Prompts] | [Tools] | [Sampling] | Roots | 备注                                                  |
+| ------------------------------------ | ----------- | --------- | ------- | ---------- | ----- | ----------------------------------------------------- |
+| [Claude Desktop App][Claude]         | ✅          | ✅        | ✅      | ❌         | ❌    | 完全支持所有 MCP 功能                                 |
+| [5ire][5ire]                         | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [BeeAI Framework][BeeAI Framework]   | ❌          | ❌        | ✅      | ❌         | ❌    | 在智能工作流中支持工具                                |
+| [Cline][Cline]                       | ✅          | ❌        | ✅      | ❌         | ❌    | 支持工具和资源                                        |
+| [Continue][Continue]                 | ✅          | ✅        | ✅      | ❌         | ❌    | 完全支持所有 MCP 功能                                 |
+| [Cursor][Cursor]                     | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [Emacs Mcp][Mcp.el]                  | ❌          | ❌        | ✅      | ❌         | ❌    | 在 Emacs 中支持工具                                   |
+| [Firebase Genkit][Genkit]            | ⚠️          | ✅        | ✅      | ❌         | ❌    | 通过工具支持资源列表和查找                            |
+| [GenAIScript][GenAIScript]           | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [Goose][Goose]                       | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [LibreChat][LibreChat]               | ❌          | ❌        | ✅      | ❌         | ❌    | 支持 Agents 工具                                      |
+| [mcp-agent][mcp-agent]               | ❌          | ❌        | ✅      | ⚠️         | ❌    | 支持工具、服务器连接管理和智能工作流                  |
+| [oterm][oterm]                       | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [Roo Code][Roo Code]                 | ✅          | ❌        | ✅      | ❌         | ❌    | 支持工具和资源                                        |
+| [Sourcegraph Cody][Cody]             | ✅          | ❌        | ❌      | ❌         | ❌    | 通过 OpenCTX 支持资源                                 |
+| [Superinterface][Superinterface]     | ❌          | ❌        | ✅      | ❌         | ❌    | 支持工具                                              |
+| [TheiaAI/TheiaIDE][TheiaAI/TheiaIDE] | ❌          | ❌        | ✅      | ❌         | ❌    | 在 Theia AI 和 AI 驱动的 Theia IDE 中支持 Agents 工具 |
+| [Windsurf Editor][Windsurf]          | ❌          | ❌        | ✅      | ❌         | ❌    | 支持 AI Flow 协作开发的工具                           |
+| [Zed][Zed]                           | ❌          | ✅        | ❌      | ❌         | ❌    | 提示词以斜杠命令形式出现                              |
+| [SpinAI][SpinAI]                     | ❌          | ❌        | ✅      | ❌         | ❌    | 支持 TypeScript AI Agents 工具                        |
+| [OpenSumi][OpenSumi]                 | ❌          | ❌        | ✅      | ❌         | ❌    | 在 OpenSumi 中支持工具                                |
+| [Daydreams Agents][Daydreams]        | ✅          | ✅        | ✅      | ❌         | ❌    | 支持在 Daydreams agents 中直接使用服务器              |
+
+[Claude]: https://claude.ai/download
+[Cursor]: https://cursor.com
+[Zed]: https://zed.dev
+[Cody]: https://sourcegraph.com/cody
+[Genkit]: https://github.com/firebase/genkit
+[Continue]: https://github.com/continuedev/continue
+[GenAIScript]: https://microsoft.github.io/genaiscript/reference/scripts/mcp-tools/
+[Cline]: https://github.com/cline/cline
+[LibreChat]: https://github.com/danny-avila/LibreChat
+[TheiaAI/TheiaIDE]: https://eclipsesource.com/blogs/2024/12/19/theia-ide-and-theia-ai-support-mcp/
+[Superinterface]: https://superinterface.ai
+[5ire]: https://github.com/nanbingxyz/5ire
+[BeeAI Framework]: https://i-am-bee.github.io/beeai-framework
+[mcp-agent]: https://github.com/lastmile-ai/mcp-agent
+[Mcp.el]: https://github.com/lizqwerscott/mcp.el
+[Roo Code]: https://roocode.com
+[Goose]: https://block.github.io/goose/docs/goose-architecture/#interoperability-with-extensions
+[Windsurf]: https://codeium.com/windsurf
+[Daydreams]: https://github.com/daydreamsai/daydreams
+[SpinAI]: https://spinai.dev
+[OpenSumi]: https://github.com/opensumi/core
+[oterm]: https://github.com/ggozad/oterm
+[Resources]: https://modelcontextprotocol.io/docs/concepts/resources
+[Prompts]: https://modelcontextprotocol.io/docs/concepts/prompts
+[Tools]: https://modelcontextprotocol.io/docs/concepts/tools
+[Sampling]: https://modelcontextprotocol.io/docs/concepts/sampling
+
+## 客户端详情
+
+### Claude Desktop App
+
+Claude 桌面应用程序提供全面的 MCP 支持，能够与本地工具和数据源进行深度集成。
+
+**主要功能：**
+
+- 完全支持资源，允许附加本地文件和数据
+- 支持提示词模板
+- 工具集成，用于执行命令和脚本
+- 本地服务器连接，增强隐私和安全性
+
+> ⓘ 注意：Claude.ai 网页应用目前不支持 MCP。MCP 功能仅在桌面应用程序中可用。
+
+### 5ire
+
+[5ire](https://github.com/nanbingxyz/5ire) 是一个开源的跨平台 AI 助手，通过 MCP 服务器支持工具。
+
+**主要功能：**
+
+- 内置 MCP 服务器可以快速启用和禁用
+- 用户可以通过修改配置文件添加更多服务器
+- 开源且用户友好，适合初学者
+- 未来将持续改进 MCP 支持
+
+### BeeAI Framework
+
+[BeeAI Framework](https://i-am-bee.github.io/beeai-framework) 是一个用于构建、部署和服务强大智能工作流的开源框架。该框架包含 **MCP Tool**，这是一个简化 MCP 服务器集成到智能工作流的原生功能。
+
+**主要功能：**
+
+- 无缝地将 MCP 工具整合到智能工作流中
+- 快速从连接的 MCP 客户端实例化框架原生工具
+- 计划未来支持智能 MCP 功能
+
+**了解更多：**
+
+- [在智能工作流中使用 MCP 工具的示例](https://i-am-bee.github.io/beeai-framework/#/typescript/tools?id=using-the-mcptool-class)
+
+### Cline
+
+[Cline](https://github.com/cline/cline) 是 VS Code 中的自主编码代理，可以编辑文件、运行命令、使用浏览器等——每一步都需要您的许可。
+
+**主要功能：**
+
+- 通过自然语言创建和添加工具（例如："添加一个搜索网络的工具"）
+- 通过 `~/Documents/Cline/MCP` 目录与他人共享 Cline 创建的自定义 MCP 服务器
+- 显示配置的 MCP 服务器及其工具、资源和任何错误日志
+
+### Continue
+
+[Continue](https://github.com/continuedev/continue) 是一个开源的 AI 代码助手，内置支持所有 MCP 功能。
+
+**主要功能**
+
+- 使用 "@" 提及 MCP 资源
+- 提示词模板以斜杠命令形式出现
+- 在聊天中直接使用内置和 MCP 工具
+- 支持 VS Code 和 JetBrains IDE，可与任何 LLM 配合使用
+
+### Cursor
+
+[Cursor](https://docs.cursor.com/advanced/model-context-protocol) 是一个 AI 代码编辑器。
+
+**主要功能：**
+
+- 在 Cursor Composer 中支持 MCP 工具
+- 支持 STDIO 和 SSE
+
+### Emacs Mcp
+
+[Emacs Mcp](https://github.com/lizqwerscott/mcp.el) 是一个设计用于与 MCP 服务器接口的 Emacs 客户端，实现无缝连接和交互。它为 [gptel](https://github.com/karthink/gptel) 和 [llm](https://github.com/ahyatt/llm) 等 AI 插件提供 MCP 工具调用支持，遵循 Emacs 的标准工具调用格式。这种集成增强了 Emacs 生态系统中 AI 工具的功能。
+
+**主要功能：**
+
+- 为 Emacs 提供 MCP 工具支持
+
+### Firebase Genkit
+
+[Genkit](https://github.com/firebase/genkit) 是 Firebase 的 SDK，用于构建 GenAI 功能并将其集成到应用程序中。[genkitx-mcp](https://github.com/firebase/genkit/tree/main/js/plugins/mcp) 插件支持作为客户端使用 MCP 服务器，或从 Genkit 工具和提示词创建 MCP 服务器。
+
+**主要功能：**
+
+- 支持工具和提示词（部分支持资源）
+- 在 Genkit 的 Dev UI 游乐场中提供丰富的发现功能
+- 与 Genkit 现有工具和提示词无缝互操作
+- 可与顶级提供商的多种 GenAI 模型配合使用
+
+### GenAIScript
+
+使用 [GenAIScript](https://microsoft.github.io/genaiscript/)（在 JavaScript 中）以编程方式组装 LLM 的提示词。在 JavaScript 中编排 LLM、工具和数据。
+
+**主要功能：**
+
+- JavaScript 工具箱用于处理提示词
+- 抽象化使其简单高效
+- 无缝的 Visual Studio Code 集成
+
+### Goose
+
+[Goose](https://github.com/block/goose) 是一个开源的 AI 代理，通过自动化编码任务来增强您的软件开发。
+
+**主要功能：**
+
+- 通过工具向 Goose 暴露 MCP 功能
+- 可以通过[扩展目录](https://block.github.io/goose/v1/extensions/)、CLI 或 UI 直接安装 MCP
+- Goose 允许您通过[构建自己的 MCP 服务器](https://block.github.io/goose/docs/tutorials/custom-extensions)来扩展其功能
+- 包含用于开发、网页抓取、自动化、内存以及 JetBrains 和 Google Drive 集成的内置工具
+
+### LibreChat
+
+[LibreChat](https://github.com/danny-avila/LibreChat) 是一个开源的、可定制的 AI 聊天 UI，支持多个 AI 提供商，现在包括 MCP 集成。
+
+**主要功能：**
+
+- 通过 MCP 服务器扩展当前工具生态系统，包括[代码解释器](https://www.librechat.ai/docs/features/code_interpreter)和图像生成工具
+- 为可定制的 [Agents](https://www.librechat.ai/docs/features/agents) 添加工具，使用来自顶级提供商的各种 LLM
+- 开源且可自托管，具有安全的多用户支持
+- 未来路线图包括扩展的 MCP 功能支持
+
+### mcp-agent
+
+[mcp-agent] 是一个使用 Model Context Protocol 构建代理的简单、可组合框架。
+
+**主要功能：**
+
+- MCP 服务器的自动连接管理
+- 向 LLM 暴露多个服务器的工具
+- 实现[构建有效代理](https://www.anthropic.com/research/building-effective-agents)中定义的每个模式
+- 支持工作流暂停/恢复信号，如等待人工反馈
+
+### oterm
+
+[oterm] 是一个用于 Ollama 的终端客户端，允许用户创建聊天/代理。
+
+**主要功能：**
+
+- 支持多个完全可定制的聊天会话，与 Ollama 连接并配备工具
+- 支持 MCP 工具
+
+### Roo Code
+
+[Roo Code](https://roocode.com) 通过 MCP 提供 AI 编码辅助。
+
+**主要功能：**
+
+- 支持 MCP 工具和资源
+- 与开发工作流集成
+- 可扩展的 AI 功能
+
+### Sourcegraph Cody
+
+[Cody](https://openctx.org/docs/providers/modelcontextprotocol) 是 Sourcegraph 的 AI 编码助手，通过 OpenCTX 实现 MCP。
+
+**主要功能：**
+
+- 支持 MCP 资源
+- 与 Sourcegraph 的代码智能集成
+- 使用 OpenCTX 作为抽象层
+- 计划未来支持额外的 MCP 功能
+
+### SpinAI
+
+[SpinAI](https://spinai.dev) 是一个用于构建可观察 AI 代理的开源 TypeScript 框架。该框架提供原生 MCP 兼容性，允许代理无缝集成 MCP 服务器和工具。
+
+**主要功能：**
+
+- AI 代理的内置 MCP 兼容性
+- 开源 TypeScript 框架
+- 可观察的代理架构
+- 原生支持 MCP 工具集成
+
+### Superinterface
+
+[Superinterface](https://superinterface.ai) 是一个 AI 基础设施和开发者平台，用于构建支持 MCP、交互式组件、客户端函数调用等的应用内 AI 助手。
+
+**主要功能：**
+
+- 通过 React 组件或脚本标签在嵌入的助手中使用 MCP 服务器的工具
+- SSE 传输支持
+- 使用来自任何 AI 提供商（OpenAI、Anthropic、Ollama 等）的任何 AI 模型
+
+### TheiaAI/TheiaIDE
+
+[Theia AI](https://eclipsesource.com/blogs/2024/10/07/introducing-theia-ai/) 是一个用于构建 AI 增强工具和 IDE 的框架。[AI 驱动的 Theia IDE](https://eclipsesource.com/blogs/2024/10/08/introducting-ai-theia-ide/) 是一个基于 Theia AI 构建的开放和灵活的开发环境。
+
+**主要功能：**
+
+- **工具集成**：Theia AI 使 AI 代理（包括 Theia IDE 中的代理）能够使用 MCP 服务器进行无缝工具交互
+- **可定制提示词**：Theia IDE 允许用户定义和调整提示词，动态集成 MCP 服务器以实现定制工作流
+- **自定义代理**：Theia IDE 支持创建利用 MCP 功能的自定义代理，使用户能够即时设计专用工作流
+
+Theia AI 和 Theia IDE 的 MCP 集成为用户提供灵活性，使其成为探索和适应 MCP 的强大平台。
+
+**了解更多：**
+
+- [Theia IDE 和 Theia AI MCP 公告](https://eclipsesource.com/blogs/2024/12/19/theia-ide-and-theia-ai-support-mcp/)
+- [下载 AI 驱动的 Theia IDE](https://theia-ide.org/)
+
+### Windsurf Editor
+
+[Windsurf Editor](https://codeium.com/windsurf) 是一个将 AI 辅助与开发者工作流相结合的智能 IDE。它采用创新的 AI Flow 系统，使 AI 交互既能协作又能独立，同时保持开发者控制。
+
+**主要功能：**
+
+- 革命性的 AI Flow 范式，用于人机协作
+- 智能代码生成和理解
+- 具有多模型支持的丰富开发工具
+
+### Zed
+
+[Zed](https://zed.dev/docs/assistant/model-context-protocol) 是一个具有内置 MCP 支持的高性能代码编辑器，专注于提示词模板和工具集成。
+
+**主要功能：**
+
+- 提示词模板在编辑器中以斜杠命令形式出现
+- 工具集成以增强编码工作流
+- 与编辑器功能和工作区上下文紧密集成
+- 不支持 MCP 资源
+
+### OpenSumi
+
+[OpenSumi](https://github.com/opensumi/core) 是一个帮助您快速构建 AI Native IDE 产品的框架。
+
+**主要功能：**
+
+- 在 OpenSumi 中支持 MCP 工具
+- 支持内置 IDE MCP 服务器和自定义 MCP 服务器
+
+### Daydreams
+
+[Daydreams](https://github.com/daydreamsai/daydreams) 是一个用于执行链上任何操作的生成式代理框架
+
+**主要功能：**
+
+- 在配置中支持 MCP 服务器
+- 暴露 MCP 客户端
+
+## 为您的应用程序添加 MCP 支持
+
+如果您已经为应用程序添加了 MCP 支持，我们鼓励您提交拉取请求将其添加到本列表中。MCP 集成可以为您的用户提供强大的上下文 AI 功能，并使您的应用程序成为不断发展的 MCP 生态系统的一部分。
+
+添加 MCP 支持的好处：
+
+- 使用户能够带来自己的上下文和工具
+- 加入不断发展的互操作 AI 应用程序生态系统
+- 为用户提供灵活的集成选项
+- 支持本地优先的 AI 工作流
+
+要开始在应用程序中实现 MCP，请查看我们的 [Python](https://github.com/modelcontextprotocol/python-sdk) 或 [TypeScript SDK 文档](https://github.com/modelcontextprotocol/typescript-sdk)
+
+## 更新和更正
+
+此列表由社区维护。如果您发现任何不准确之处或想要更新有关应用程序中 MCP 支持的信息，请提交拉取请求或在[我们的文档仓库中提出问题](https://github.com/modelcontextprotocol/docs/issues)。

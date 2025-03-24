@@ -1,30 +1,10 @@
 ---
 sidebar_position: 4
-title: 使用 Claude 客户端
+title: 使用 MCP 客户端
 ---
 
-Docusaurus is a **static-site-generator** (also called **[Jamstack](https://jamstack.org/)**).
+由于 Claude-Desktop 在大陆不可用，个人推荐使用 Cursor / RooCode/ CherryStudio/ Chatwise 等客户端代替
 
-It builds your site as simple **static HTML, JavaScript and CSS files**.
+如果你有兴趣折腾 Claude-Desktop，请参考官网 https://modelcontextprotocol.io/quickstart/user
 
-## Build your site
-
-Build your site **for production**:
-
-```bash
-npm run build
-```
-
-The static files are generated in the `build` folder.
-
-## Deploy your site
-
-Test your production build locally:
-
-```bash
-npm run serve
-```
-
-The `build` folder is now served at [http://localhost:3000/](http://localhost:3000/).
-
-You can now deploy the `build` folder **almost anywhere** easily, **for free** or very small cost (read the **[Deployment Guide](https://docusaurus.io/docs/deployment)**).
+![](./img/claude-desktop.png)
