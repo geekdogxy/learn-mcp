@@ -6,25 +6,250 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #3355ff;
+  --ifm-color-primary-dark: #1a3fee;
+  --ifm-color-primary-darker: #1339e1;
+  --ifm-color-primary-darkest: #102fb9;
+  --ifm-color-primary-light: #4d6bff;
+  --ifm-color-primary-lighter: #6079ff;
+  --ifm-color-primary-lightest: #8a9cff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-heading-font-weight: 600;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --custom-border-radius: 8px;
+  --custom-card-bg-color: #f6f8fa;
+  --custom-card-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #5d76ff;
+  --ifm-color-primary-dark: #4561ff;
+  --ifm-color-primary-darker: #3355ff;
+  --ifm-color-primary-darkest: #0029e6;
+  --ifm-color-primary-light: #758bff;
+  --ifm-color-primary-lighter: #8798ff;
+  --ifm-color-primary-lightest: #bac2ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --custom-card-bg-color: #1c1e21;
+  --custom-card-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional global styles */
+.container-spacious {
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary-lighter) 100%
+  );
+  margin: 0.8rem auto 2.5rem;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.card {
+  background-color: var(--custom-card-bg-color);
+  border-radius: var(--custom-border-radius);
+  box-shadow: var(--custom-card-shadow);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary-light) 0%,
+    var(--ifm-color-primary) 100%
+  );
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.feature-grid .card {
+  flex: 0 0 calc(33.333% - 1rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, rgba(51, 85, 255, 0.05) 0%, rgba(51, 85, 255, 0) 100%);
+  border-bottom: 1px solid rgba(51, 85, 255, 0.1);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    90deg,
+    var(--ifm-color-primary) 0%,
+    var(--ifm-color-primary-lighter) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  opacity: 0.8;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-compact {
+  padding-top: 0.5rem;
+}
+
+.section-alt {
+  background-color: var(--custom-card-bg-color);
+}
+
+@media screen and (max-width: 996px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .feature-grid .card {
+    flex: 0 0 100%;
+  }
+}
+
+.architecture-container {
+  padding: 2rem;
+  border-radius: var(--custom-border-radius);
+  background-color: var(--custom-card-bg-color);
+  box-shadow: var(--custom-card-shadow);
+  margin: 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.architecture-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 6s infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  20%,
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.architecture-img {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: var(--custom-border-radius);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.architecture-img:hover {
+  transform: scale(1.02);
+}
+
+.section-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+[data-theme='dark'] .architecture-container::before {
+  background: linear-gradient(
+    to bottom right,
+    rgba(51, 85, 255, 0) 0%,
+    rgba(51, 85, 255, 0.1) 50%,
+    rgba(51, 85, 255, 0) 100%
+  );
 }

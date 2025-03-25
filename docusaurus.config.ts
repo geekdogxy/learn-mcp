@@ -6,7 +6,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
   title: 'Learn MCP',
-  tagline: 'Learn MCP',
+  // tagline: 'Learn MCP',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -83,7 +83,7 @@ const config: Config = {
           position: 'left',
           label: '文档',
         },
-        { to: '/blog', label: '博客', position: 'left' },
+        // { to: '/blog', label: '博客', position: 'left' },
       ],
     },
     footer: {

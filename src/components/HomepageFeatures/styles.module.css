@@ -3,9 +3,69 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f7);
 }
 
 .featureSvg {
   height: 200px;
   width: 200px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.featureSvg:hover {
+  transform: scale(1.05);
+}
+
+.text--center {
+  text-align: center;
+}
+
+.padding-horiz--md {
+  padding: 0 1.5rem;
+}
+
+/* Apple-style typography */
+.text--center h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+}
+
+.text--center p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #86868b;
+  margin-bottom: 0;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Row styles */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+  justify-content: center;
+}
+
+/* Column styles */
+.col {
+  flex: 1;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 996px) {
+  .col {
+    flex: 0 0 100%;
+  }
 }
