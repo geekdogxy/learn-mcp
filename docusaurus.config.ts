@@ -27,8 +27,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans', 'en'],
   },
   markdown: {
     mermaid: true,
@@ -70,6 +70,10 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    metadata: [
+      { name: 'keywords', content: '学习MCP, MCP中文教程, MCP中文文档, MCP, AI' },
+      { name: 'description', content: 'Learn MCP - 学习MCP中文教程和文档' },
+    ],
     navbar: {
       title: '学习MCP',
       logo: {
