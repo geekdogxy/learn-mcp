@@ -4,4 +4,4 @@ sidebar_position: 2
 
 # 规范
 
-- https://spec.modelcontextprotocol.io/specification/2024-11-05/
+- https://modelcontextprotocol.io/specification/2025-03-26
